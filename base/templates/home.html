@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    {% extends 'main.html' %}
+
+    {% block content %}
+    <h1>Welcome Home!</h1>
+
+    <div>
+        {% for room in rooms %}
+            <h2>{{room.id}} -- {{room.name}}</h2>
+        {% endfor %}
+
+        {% for movie in movies%}
+            {% if search == movie.title %}
+                <h2>{{movie.title}}</h2>
+                <h2>{{movie.description}}</h2>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% endblock %}
+
+</body>
+</html>
